@@ -1,7 +1,7 @@
 [project]
 name = "yaa"
 version = "0.1.0"
-description = ""
+description = "yaa: yammer's AI Agent"
 authors = [
     {name = "Keisuke Nakayama",email = "me@yammer.jp"}
 ]
