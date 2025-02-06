@@ -1,0 +1,9 @@
+services:
+  yaa-app:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    ports:
+      - 8765:80
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
