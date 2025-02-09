@@ -3,7 +3,7 @@ from langchain.prompts import ChatPromptTemplate
 from langchain.schema import StrOutputParser
 from langchain.schema.runnable import Runnable
 from langchain.schema.runnable.config import RunnableConfig
-from typing import cast
+from typing import cast, Dict, Optional
 import chainlit as cl
 
 
@@ -36,3 +36,12 @@ async def on_message(message: cl.Message):
         await msg.stream_token(chunk)
 
     await msg.send()
+
+@cl.oauth_callback
+def oauth_callback(
+  provider_id: str,
+  token: str,
+  raw_user_data: Dict[str, str],
+  default_user: cl.User,
+) -> Optional[cl.User]:
+    return default_user
