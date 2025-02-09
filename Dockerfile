@@ -12,6 +12,8 @@ RUN adduser --disabled-password app && \
     POETRY_HOME=/home/app/.poetry python3 get-poetry.py && \
     rm get-poetry.py
 
+RUN curl -L --output - 'https://github.com/sqldef/sqldef/releases/latest/download/psqldef_linux_amd64.tar.gz' | tar xvz && mv psqldef /usr/local/bin/psqldef && chmod 755 /usr/local/bin/psqldef
+
 USER app
 
 # Add Poetry to PATH
